@@ -32,7 +32,7 @@ assertEqual(Array.isArray(result2), true); // ensure a array is returned
 assertEqual(result3.length, 0); // ensure the lenght of array is 0
 assertEqual(Array.isArray(result3), true); // ensure a array is returned
 
-// Test Case: Check the original array
+// Test Case 3: Check the original array
 const words = ["Loopy", "Lighthouse", "Labs"];
 tail(words); // no need to capture the return value since we are not checking it
 assertEqual(words.length, 3); // original array should still have 3 elements!

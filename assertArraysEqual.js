@@ -14,3 +14,9 @@ const assertArraysEqual = function(arry1, arry2) {
     return '❌❌❌ ' + 'Assertion Failed: Your Arrays are not equal!';
   }
 };
+
+console.log(assertArraysEqual([1, 2, 3], [1, 2, 3])); // => true
+console.log(assertArraysEqual([1, 2, 3], [3, 2, 1])); // => false
+
+console.log(assertArraysEqual(["1", "2", "3"], ["1", "2", "3"])); // => true
+console.log(assertArraysEqual(["1", "2", "3"], ["1", "2", 3])); // => false
