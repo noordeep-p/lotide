@@ -19,7 +19,9 @@ const eqArrays = function(arry1, arry2) {
   }
   if (eqValues.length === arry1.length) {
     return true;
-  } else return false;
+  } else {
+    return false;
+  }
 };
 
 console.log(eqArrays([1, 2, 3], [1, 2, 3])); // => true
