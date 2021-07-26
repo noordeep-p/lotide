@@ -1,9 +1,9 @@
 const assertArraysEqual = function(arry1, arry2) {
-  if (eqArrays(arry1, arry2) === true) {
-    return console.log('✅✅✅ ' + 'Assertion Passed: Your Arrays are equal!');
+  if (eqArrays(arry1, arry2)) {
+    console.log('✅✅✅ ' + 'Assertion Passed: Your Arrays are equal!');
   
-  } else if (eqArrays(arry1, arry2) === false) {
-    return console.log('❌❌❌ ' + 'Assertion Failed: Your Arrays are not equal');
+  } else {
+    console.log('❌❌❌ ' + 'Assertion Failed: Your Arrays are not equal!');
   }
 };
 
@@ -23,36 +23,22 @@ const eqArrays = function(arry1, arry2) {
   }
 };
 
-const without = function(arry1, arry2) {
-  const withoutArry = [];
-  for (let i = 0; i < arry1.length; i++) {
-    let remove;
-    for (let j = 0; j < arry2.length; j++) {
-      if (arry1[i] === arry2[j]) {
-        remove = true;
-      }
-    }
-    if (!remove) {
-      withoutArry.push(arry1[i]);
+const without = function(source, itemsToRemove) {
+  let withoutArry = [];
+  for (let i = 0; i < source.length; i++) {
+    if (!itemsToRemove.includes(source[i])) {
+      withoutArry.push(source[i]);
     }
   }
   return withoutArry;
 };
 
-// const without = function(source, itemsToRemove) {
-//   let withoutArry = [];
-//   for (let i = 0; i < source.length; i++) {
-//     if (!itemsToRemove.includes(source[i])) {
-//       withoutArry.push(source[i]);
-//     }
-//   }
-//   return withoutArry;
-// };
+// test cases
+assertArraysEqual(without([1, 2, 3], [1]), [2, 3]);
+assertArraysEqual(without(["1", "2", "3"], [1, "1", "2"]), ["3"]);
+assertArraysEqual(without(["1", "2", "3"], [1, "2"]), ["1","3"]);
 
-console.log(without([1, 2, 3], [1])); // => [2, 3]
-console.log(without(["1", "2", "3"], [1, "1", "2"])); // => ["1", "2"]
-
+// ensure original array is not mutated
 const words = ["hello", "world", "lighthouse"];
-without(words, ["lighthouse"]); // no need to capture return value for this test case
-// Make sure the original array was not altered by the without function
+without(words, ["lighthouse"]);
 assertArraysEqual(words, ["hello", "world", "lighthouse"]);
