@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@noordeep-p/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "Lotide JS library with utility functions based on Lodash",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/noordeep-p/lotide.git"
   },
-  "author": "",
+  "author": "Noordeep Punajabi <punjabi.noordeep@gmail.com> (https://github.com/noordeep-p)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/noordeep-p/lotide/issues"
