@@ -1,4 +1,4 @@
-const middle = require('./../assertArraysEqual');
+const middle = require('./../middle');
 const assertArraysEqual = require('./../assertArraysEqual');
 
 middle([1]); // => []
