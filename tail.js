@@ -1,6 +1,3 @@
-// assertEqual Function
-const assertEqual = require('./assertEqual');
-
 // tail function
 const tail = function(input) {
   let tailArry = [];
