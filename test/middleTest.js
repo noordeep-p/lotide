@@ -1,20 +1,24 @@
+const eqArrays = require("../eqArrays");
 const middle = require('./../middle');
-const assertArraysEqual = require('./../assertArraysEqual');
+const assert = require('chai').assert;
 
-middle([1]); // => []
-middle([1, 2]); // => []
-
-assertArraysEqual(middle([1]), []);
-assertArraysEqual(middle([1, 2]), []);
-
-middle([1, 2, 3]); // => [2]
-middle([1, 2, 3, 4, 5]); // => [3]
-
-assertArraysEqual(middle([1, 2, 3]), [2]);
-assertArraysEqual(middle([1, 2, 3, 4, 5]), [3]);
-
-middle([1, 2, 3, 4]); // => [2, 3]
-middle([1, 2, 3, 4, 5, 6]); // => [3, 4]
-
-assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]);
-assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]);
+describe("#middle", function() {
+  it('should return [] for inputs [1]', function() {
+    let result = middle([1]);
+    assert.equal(eqArrays(result, []), true);
+  });
+  it('should return [2] for inputs [1,2,3]', function() {
+    assert.equal(eqArrays(middle([1,2,3]), [2]) , true);
+  });
+  it('should return [2,3] for [1,2,3,4]', function() {
+    assert.equal(eqArrays(middle([1,2,3,4]), [2,3]) , true);
+  });
+  it('should return middle element with string array', function() {
+    assert.equal(eqArrays(middle(["1","2","3"]), ["2"]) , true);
+  });
+  it("should not mutate the original array", function() {
+    const arr = ["Loopy", "Lighthouse", "Labs"];
+    middle(arr);
+    assert.equal(arr.length, 3);
+  });
+});
