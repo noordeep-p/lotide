@@ -30,9 +30,9 @@ const eqObjects = function(object1, object2) {
     }
   }
   if (Object.keys(object1).length === equalKeyValues) {
-    return console.log(true);
+    return true;
   } else {
-    return console.log(false);
+    return false;
   }
 };
 
